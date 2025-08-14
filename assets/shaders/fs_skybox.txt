@@ -1,0 +1,14 @@
+#version 330 core
+
+in vec3 texCoords;
+
+out vec4 fragColor;
+
+uniform samplerCube skybox;
+
+void main() {
+    fragColor = texture(skybox, vec3(texCoords.x, -texCoords.y, texCoords.z));
+    
+}
+
+//Skybox Fragment Shader is modified from: https://learnopengl.com/code_viewer_gh.php?code=src/4.advanced_opengl/6.2.cubemaps_environment_mapping/6.2.skybox.fs
